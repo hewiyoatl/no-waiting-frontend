@@ -22,7 +22,7 @@ class Callback extends Controller {
         getToken(code).flatMap { case (idToken, accessToken) =>
           getUser(accessToken).map { user =>
             Cache.set(idToken + "profile", user)
-            Redirect(routes.User.index())
+            Redirect(routes.User.index)
               .withSession(
                 "idToken" -> idToken,
                 "accessToken" -> accessToken

@@ -1,0 +1,53 @@
+@import helper._
+
+@(restaurantForm: Form[RestaurantData])
+
+@main("Auth0 Play2 Scala Sample", "home") {
+    @form(routes.RestaurantController.saveRestaurant(), 'class -> "form-horizontal") {
+        <div class="container">
+            <table border="1" cellpadding="1" cellspacing="1" style="width : 500 px ;">
+                <tbody>
+                    <tr>
+                        <td>Address 1</td>
+                        <td><input maxlength="500" name="address_1" size="50" type="text" value="@restaurantForm.value" /></td>
+                    </tr>
+                    <tr>
+                        <td>Address 2</td>
+                        <td><input maxlength="500" name="address_2" size="50" type="text" value="@restaurantForm.value"/></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td><input maxlength="500" name="city" size="50" type="text" value="@restaurantForm.value"/></td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td><select name="state" size="1"><option value="@restaurantForm.value">California</option> <option value="OR">
+                            Oregon</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code</td>
+                        <td><input maxlength="5" name="zip_code" size="5" type="text" value="@restaurantForm.value" /></td>
+                    </tr>
+                    <tr>
+                        <td>Telephone</td>
+                        <td><input maxlength="100" name="telephone" size="50" type="tel" value="@restaurantForm.value" /></td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td><input maxlength="100" name="latitude" size="50" type="text" value="10.00002" value="@restaurantForm.value"/></td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <td><input maxlength="100" name="longitude" size="50" type="text" value="-10.00002" value="@restaurantForm.value"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                <button id="cancel" class="btn cancel">Cancel</button>
+            </div>
+        </div>
+    }
+}

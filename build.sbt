@@ -1,7 +1,7 @@
 import com.typesafe.config.ConfigFactory
 import scoverage.ScoverageKeys
 
-name := "no-waiting-backend"
+name := "no-waiting-frontend"
 
 lazy val metricsPlayVersion = "d1a2b66"
 

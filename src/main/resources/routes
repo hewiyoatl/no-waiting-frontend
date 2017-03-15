@@ -2,6 +2,8 @@
 GET     /                           controllers.Application.index
 GET     /callback                   controllers.Callback.callback(code: Option[String])
 GET     /user                       controllers.User.index
+GET     /restaurant                       controllers.RestaurantController.index
+POST     /restaurant                       controllers.RestaurantController.saveRestaurant
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -8,7 +8,7 @@
 @import play.api.templates.PlayMagic._
 @import play.api.libs.json.JsValue
 
-@(profile: JsValue)
+@(prop: String, profile: JsValue)
 
 @main("Auth0 Play2 Scala Sample", "home") {
 
@@ -18,6 +18,10 @@
                 <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>
                 <img class="avatar" src='@((profile \ "picture").as[String])'/>
                 <h2>Welcome @((profile \ "name").as[String])</h2>
+                <h2> tetetete </h2>
+                <h2>This is the whole json @(prop)</h2>
+                <h2>User Id @((profile \ "user_id").as[String])</h2>
+                <h2>Email @((profile \ "email").as[String])</h2>
             </div>
         </div>
 }

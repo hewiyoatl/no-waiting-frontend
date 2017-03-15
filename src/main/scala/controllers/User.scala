@@ -24,6 +24,6 @@ class User extends Controller {
 
     val idToken = request.session.get("idToken").get
     val profile = Cache.getAs[JsValue](idToken + "profile").get
-    Ok(views.html.user(profile))
+    Ok(views.html.user(Json.stringify(profile), profile))
   }
 }
